@@ -2,7 +2,7 @@ file_path = 'Part 2/pg2701.txt'
 with open(file_path, 'r', encoding ='utf-8') as file:
     text = file.read()
 
-    
+
 
 start_index = text.find("CHAPTER 1. Loomings.")
 text = text[start_index:]
