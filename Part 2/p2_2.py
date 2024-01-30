@@ -1,28 +1,23 @@
 import numpy as np
 
-def read_from_chapter(file_path, start_line):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        lines = file.readlines()
-    start_index = lines.index(start_line + '\n')
-    lines = lines[start_index:]
-    lines = [line.strip() for line in lines]
-    return np.array(lines)
-
 def count_vowels(word):
     vowels = "aeiouy"
     return sum(letter in vowels for letter in word.lower())
 
-total_vowels = 0
-total_words = 0
+with open('Part 2/pg2701.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+start_index = lines.index("CHAPTER 1. Loomings." + '\n')
+lines = lines[start_index:]
+lines = [line.strip() for line in lines]
+arr1 = np.array(lines)
 
-file_path = 'Part 2/pg2701.txt'
-start_line = "CHAPTER 1. Loomings."
-lines_array = read_from_chapter(file_path, start_line)
+total_num_of_vowels = 0
+total_num_of_words = 0
 
-for line in lines_array:
+for line in arr1:
     words = line.split()
-    total_words += len(words)
-    total_vowels += sum(count_vowels(word) for word in words)
+    total_num_of_words += len(words)
+    total_num_of_vowels += sum(count_vowels(word) for word in words)
 
-average_vowels = round(total_vowels / total_words if total_words else 0)
+average_vowels = round(total_num_of_vowels / total_num_of_words )
 print(f"Average number of vowels per word: {average_vowels}")
