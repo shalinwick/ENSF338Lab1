@@ -11,7 +11,7 @@ def alter_size():
         record['size'] = 42
 
 
-file_path = "Part 2/large-file.json"
+file_path = "large-file.json"
 
 with open(file_path, 'r', encoding='utf-8') as file:
     

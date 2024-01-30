@@ -26,7 +26,7 @@ def plot(data, filename, title):
     plt.savefig(filename)
     plt.close()
 
-with open('Part 3/internetdata.json', 'r') as file:
+with open('internetdata.json', 'r') as file:
     data = json.load(file)
 
 income_below_10000, income_at_or_above_10000 = separate_by_income(data)

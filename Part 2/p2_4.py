@@ -6,7 +6,7 @@ def count_vowels(word):
     return sum(letter in vowels for letter in word.lower())
 
 def compute_average_vowels():
-    with open('Part 2/pg2701.txt', 'r', encoding='utf-8') as file:
+    with open('pg2701.txt', 'r', encoding='utf-8') as file:
         lines = file.readlines()
     start_index = lines.index("CHAPTER 1. Loomings." + '\n')
     lines = lines[start_index:]

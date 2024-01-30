@@ -1,7 +1,7 @@
 import json
 
 
-file_location = "Part 2/large-file.json"
+file_location = "large-file.json"
 
 with open(file_location, 'r', encoding='utf-8') as file:
     
